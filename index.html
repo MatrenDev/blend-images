@@ -14,20 +14,20 @@
 <br>
 
 <script>
-	let img1 = document.querySelectorAll(".image")[0];
-	let img2 = document.querySelectorAll(".image")[1];
-	let reselement = document.querySelector(".print");
-	var context = reselement.getContext("2d");
-	let buttonelement = document.querySelector(".button");
-	buttonelement.addEventListener("click", () => 
-	{
-		reselement.width = img1.width;
-		reselement.height = img1.height;
-		context.globalAlpha = 1.0;
-		context.drawImage(img1, 0, 0);
-		context.globalAlpha = 0.5;
-		context.drawImage(img2, 0, 0);
-	});
+let img1 = document.querySelectorAll(".image")[0];
+let img2 = document.querySelectorAll(".image")[1];
+let reselement = document.querySelector(".print");
+var context = reselement.getContext("2d");
+let buttonelement = document.querySelector(".button");
+buttonelement.addEventListener("click", () => 
+{
+	reselement.width = img1.width;
+	reselement.height = img1.height;
+	context.globalAlpha = 1.0;
+	context.drawImage(img1, 0, 0);
+	context.globalAlpha = 0.5;
+	context.drawImage(img2, 0, 0);
+});
 </script>
 <h2>Colour</h2>
 <canvas id="blendgener"></canvas>
