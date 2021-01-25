@@ -1,2 +1,2 @@
 # blend-images
-Blend modes &amp; blend two images together
+It allows you to combine two photos into one and shows 'blend modes' in practice in color spaces.
