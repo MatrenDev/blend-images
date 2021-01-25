@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blending</title>
+</head>
+<body>
+<h1>Blending</h1>
+<button class="button">Blending (Click/Kliknij)</button>
+<img class="image" src="images/1.jpg"/>
+<img class="image" src="images/2.jpg"/>
+<canvas class="print"></canvas>
+<br>
+
+<script>
+	let img1 = document.querySelectorAll(".image")[0];
+	let img2 = document.querySelectorAll(".image")[1];
+	let reselement = document.querySelector(".print");
+	var context = reselement.getContext("2d");
+	let buttonelement = document.querySelector(".button");
+	buttonelement.addEventListener("click", () => 
+	{
+		reselement.width = img1.width;
+		reselement.height = img1.height;
+		context.globalAlpha = 1.0;
+		context.drawImage(img1, 0, 0);
+		context.globalAlpha = 0.5;
+		context.drawImage(img2, 0, 0);
+	});
+</script>
+<h2>Colour</h2>
+<canvas id="blendgener"></canvas>
+<script>
+let blend = document.getElementById('blendgener');
+
+let winMin = Math.min(window.innerWidth,window.innerHeight);
+blend.width = winMin;
+blend.height = winMin;
+
+var ctx = blend.getContext("2d");
+
+ctx.globalCompositeOperation = "multiply";
+
+ctx.fillStyle = "rgb(255,128,255)";
+ctx.beginPath();
+ctx.rect(110, 110, 150, 100);
+ctx.stroke();
+ctx.fill();
+
+ctx.fillStyle = "rgb(255,255,0)";
+ctx.beginPath();
+ctx.rect(80, 80, 150, 100);
+ctx.stroke();
+ctx.fill();
+
+ctx.fillStyle = "rgb(0,255,255)";
+ctx.beginPath();
+ctx.rect(50, 50, 150, 100);
+ctx.stroke();
+ctx.fill();
+
+ctx.fillStyle = "rgb(255,0,255)";
+ctx.beginPath();
+ctx.rect(20, 20, 150, 100);
+ctx.stroke();
+ctx.fill();
+</script>
+</body>
+</html>
